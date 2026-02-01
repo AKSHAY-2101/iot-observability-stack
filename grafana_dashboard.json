@@ -1,0 +1,9 @@
+{
+  "title": "IoT Edge Performance",
+  "panels": [
+    { "title": "MQTT Message Rate", "type": "graph" },
+    { "title": "Gateway CPU Usage", "type": "gauge" },
+    { "title": "Online/Offline Status", "type": "stat" }
+  ],
+  "templating": { "list": [] }
+}
