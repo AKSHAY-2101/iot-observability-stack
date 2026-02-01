@@ -1,0 +1,18 @@
+groups:
+  - name: IoT_Alerts
+    rules:
+      - alert: GatewayDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Gateway {{ $labels.instance }} is offline"
+
+      - alert: HighMessageLatency
+        expr: mqtt_messages_publish_latency > 500
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          description: "MQTT Latency is above 500ms on {{ $labels.instance }}"
